@@ -3,10 +3,10 @@ let app = new Vue ({
     data: {
         albumArray: [],
     },
-    methods: {
-        function(){
+    mounted() {
+       
             axios
-            .get('http://localhost:8888/php-ajax-dischi/')
+            .get('http://localhost:8888/php-ajax-dischi/index.php')
             .then((outcome) => {
                 this.albumArray = outcome.data
                 console.log(outcome.data)
@@ -16,6 +16,6 @@ let app = new Vue ({
                 // handle error
                 console.log(error);
             })
-        }
+        
     },
 })
